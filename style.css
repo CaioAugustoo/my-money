@@ -79,6 +79,8 @@ button {
   border-radius: 0.25rem;
 
   cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
 button:hover {
@@ -102,6 +104,8 @@ button:hover {
   justify-content: center;
 
   opacity: 0.6;
+
+  transition: all 0.2s ease;
 }
 
 .button.cancel:hover {

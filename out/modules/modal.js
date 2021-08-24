@@ -9,6 +9,11 @@ export class Modal {
         this.events();
     }
     handleSubmit(_) { }
+    handleClickOutside(event) {
+        if (event.target === this._wrapper) {
+            this.close();
+        }
+    }
     open(event) {
         event.preventDefault();
         this._wrapper.classList.add(ACTIVE_CLASSNAME);
@@ -20,6 +25,7 @@ export class Modal {
         this._openButton.addEventListener("click", event => this.open(event));
         this._cancelButton.addEventListener("click", this.close);
         this._form.addEventListener("submit", event => this.handleSubmit(event));
+        document.addEventListener("click", event => this.handleClickOutside(event));
     }
     bindEvents() {
         this.close = this.close.bind(this);

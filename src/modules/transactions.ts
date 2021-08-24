@@ -12,13 +12,12 @@ export interface ITransaction {
   description: string;
   amount: number;
   created_at: number;
+  type: string;
 }
-
-const modal = new Modal();
 
 export class Transactions {
   private readonly _transactionsWrapper: HTMLDivElement;
-  private _transactions: ITransaction[] = [];
+  public transactions: ITransaction[] = [];
 
   constructor() {
     this._transactionsWrapper = document.querySelector("#data-table tbody");
@@ -28,26 +27,30 @@ export class Transactions {
   }
 
   public create(data: ITransaction): void {
-    this._transactions.push(data);
+    const modal = new Modal();
+
+    this.transactions.push(data);
     this.addToDom(data);
 
-    saveItemInStorage(this._transactions);
+    saveItemInStorage(this.transactions);
     modal.close();
   }
 
   private addToDom(transaction: ITransaction): void {
-    const createdTransaction = createTransactionModel(transaction);
-    this._transactionsWrapper.innerHTML += createdTransaction;
+    this._transactionsWrapper.insertAdjacentElement(
+      "afterbegin",
+      createTransactionModel(transaction)
+    );
   }
 
   private renderDom(): void {
-    this._transactions.forEach(transaction => this.addToDom(transaction));
+    this.transactions.forEach(transaction => this.addToDom(transaction));
   }
 
   private list(): ITransaction[] {
     const itensFromStorage = getItemFromStorage() || [];
 
-    this._transactions = itensFromStorage;
+    this.transactions = itensFromStorage;
 
     return itensFromStorage;
   }

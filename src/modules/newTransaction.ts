@@ -19,7 +19,7 @@ export class NewTransaction extends Modal {
     this._amountField.value = "";
   }
 
-  handleSubmit(event: Event) {
+  protected handleSubmit(event: Event) {
     event.preventDefault();
 
     transaction.create({

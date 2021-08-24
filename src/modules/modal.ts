@@ -16,7 +16,7 @@ export class Modal {
     this.events();
   }
 
-  public handleSubmit(_: Event): void {}
+  protected handleSubmit(_: Event): void {}
 
   private open(event: Event) {
     event.preventDefault();

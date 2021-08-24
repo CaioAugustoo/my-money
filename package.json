@@ -1,0 +1,11 @@
+{
+  "name": "my-money",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/CaioAugustoo/my-money.git",
+  "author": "caioaugustoo <caioamfr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}

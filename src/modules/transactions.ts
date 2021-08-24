@@ -26,15 +26,11 @@ export class Transactions {
     this.renderDom();
   }
 
-  private saveInStorage(): void {
-    saveItemInStorage(this._transactions);
-  }
-
   public create(data: ITransaction): void {
     this._transactions.push(data);
-    this.saveInStorage();
     this.addToDom(data);
 
+    saveItemInStorage(this._transactions);
     modal.close();
   }
 

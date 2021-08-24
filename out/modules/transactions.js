@@ -9,13 +9,10 @@ export class Transactions {
         this.list();
         this.renderDom();
     }
-    saveInStorage() {
-        saveItemInStorage(this._transactions);
-    }
     create(data) {
         this._transactions.push(data);
-        this.saveInStorage();
         this.addToDom(data);
+        saveItemInStorage(this._transactions);
         modal.close();
     }
     addToDom(transaction) {

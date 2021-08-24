@@ -4,7 +4,7 @@ import { ITransaction } from "./transactions.js";
 
 export function createTransactionModel(transaction: ITransaction): string {
   return `
-    <tr>
+    <tr data-id=${transaction.id}>
       <td>${transaction.title}</td>
       <td>${transaction.description}</td>
       <td style=${

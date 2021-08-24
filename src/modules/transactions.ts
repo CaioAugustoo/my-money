@@ -21,7 +21,7 @@ const summary = new TransactionSummary();
 
 export class Transactions {
   private readonly _transactionsWrapper: HTMLDivElement;
-  public transactions: ITransaction[] = [];
+  private transactions: ITransaction[] = [];
 
   constructor() {
     this._transactionsWrapper = document.querySelector("#data-table tbody");

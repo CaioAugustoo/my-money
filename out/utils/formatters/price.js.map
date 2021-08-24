@@ -1,0 +1,1 @@
+{"version":3,"file":"price.js","sourceRoot":"","sources":["../../../src/utils/formatters/price.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,WAAW,CAAC,KAAa;IACvC,OAAO,IAAI,IAAI,CAAC,YAAY,CAAC,OAAO,EAAE;QACpC,KAAK,EAAE,UAAU;QACjB,QAAQ,EAAE,KAAK;KAChB,CAAC,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC;AACnB,CAAC"}

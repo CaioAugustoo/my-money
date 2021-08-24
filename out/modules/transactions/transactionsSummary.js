@@ -1,4 +1,4 @@
-import { formatPrice } from "../utils/formatters/price.js";
+import { formatPrice } from "../../utils/formatters/price.js";
 export class TransactionSummary {
     constructor() {
         this._expenseCard = document.querySelector("#expenseDisplay");

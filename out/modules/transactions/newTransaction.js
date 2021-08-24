@@ -1,5 +1,5 @@
-import { ACTIVE_CLASSNAME } from "../constants/index.js";
-import { Modal } from "./modal.js";
+import { ACTIVE_CLASSNAME } from "../../constants/index.js";
+import { Modal } from "./../modal.js";
 import { Transactions } from "./transactions.js";
 export const transaction = new Transactions();
 export class NewTransaction extends Modal {

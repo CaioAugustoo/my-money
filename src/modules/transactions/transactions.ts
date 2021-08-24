@@ -1,8 +1,9 @@
 import {
   getItemFromStorage,
   saveItemInStorage,
-} from "../utils/localStorage/index.js";
-import { Modal } from "./modal.js";
+} from "../../utils/localStorage/index.js";
+import { Modal } from "./../modal.js";
+import { TransactionDetails } from "./transactionDetails.js";
 
 import { createTransactionModel } from "./transactionModel.js";
 import { TransactionSummary } from "./transactionsSummary.js";
@@ -18,6 +19,7 @@ export interface ITransaction {
 
 const modal = new Modal();
 const summary = new TransactionSummary();
+const transactionDetails = new TransactionDetails();
 
 export class Transactions {
   private readonly _transactionsWrapper: HTMLDivElement;
@@ -28,6 +30,13 @@ export class Transactions {
 
     this.list();
     this.renderDom();
+
+    this.bindEvents();
+    this.events();
+  }
+
+  private openDetails(id: string): void {
+    transactionDetails.open(id, this.transactions);
   }
 
   public create(data: ITransaction): void {
@@ -51,11 +60,26 @@ export class Transactions {
     this.transactions.forEach(transaction => this.addToDom(transaction));
   }
 
-  public list(): ITransaction[] {
+  private list(): ITransaction[] {
     const itensFromStorage = getItemFromStorage() || [];
 
     this.transactions = itensFromStorage;
 
     return this.transactions;
+  }
+
+  private bindEvents(): void {
+    this.openDetails = this.openDetails.bind(this);
+  }
+
+  private events(): void {
+    const transactionsElement =
+      this._transactionsWrapper.querySelectorAll("tr");
+
+    transactionsElement.forEach(transaction =>
+      transaction.addEventListener("click", () =>
+        this.openDetails(transaction.getAttribute("data-id"))
+      )
+    );
   }
 }

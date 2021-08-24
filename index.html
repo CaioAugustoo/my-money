@@ -54,9 +54,10 @@
         <table id="data-table">
           <thead>
             <tr>
+              <th>Título</th>
               <th>Descrição</th>
               <th>Valor</th>
-              <th>Data</th>
+              <th>Criada em</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -68,7 +69,18 @@
       <div class="modal">
         <div id="form">
           <h2>Nova Transação</h2>
-          <form action="">
+          <form>
+            <div class="input-group">
+              <label class="sr-only" for="title">Título</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Título"
+                required
+              />
+            </div>
+
             <div class="input-group">
               <label class="sr-only" for="description">Descrição</label>
               <input
@@ -76,6 +88,7 @@
                 id="description"
                 name="description"
                 placeholder="Descrição"
+                required
               />
             </div>
 
@@ -86,7 +99,8 @@
                 step="0.01"
                 id="amount"
                 name="amount"
-                placeholder="0,00"
+                placeholder="Valor"
+                required
               />
               <small class="help"
                 >Use o sinal - (negativo) para despesas e , (vírgula) para casas

@@ -4,6 +4,7 @@ const transaction = new Transactions();
 export class NewTransaction extends Modal {
     constructor() {
         super();
+        this._titleField = document.querySelector("#title");
         this._descriptionField = document.querySelector("#description");
         this._amountField = document.querySelector("#amount");
     }
@@ -14,10 +15,11 @@ export class NewTransaction extends Modal {
     handleSubmit(event) {
         event.preventDefault();
         transaction.create({
+            title: this._titleField.value,
             id: new Date().getTime(),
             description: this._descriptionField.value,
             amount: Number(this._amountField.value),
-            date: new Date().getTime(),
+            created_at: new Date().getTime(),
         });
         this.clearFields();
     }

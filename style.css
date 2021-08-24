@@ -17,7 +17,16 @@ html {
 
 body {
   background: #f0f2f5;
+}
+
+body,
+input,
+button {
   font-family: "Poppins", sans-serif;
+}
+
+input:focus {
+  border: 1px solid var(--light-purple);
 }
 
 .sr-only {
@@ -248,12 +257,15 @@ td.expense {
 }
 
 input {
-  border: none;
+  outline: none;
+  border: 1px solid transparent;
   border-radius: 0.2rem;
 
   padding: 0.8rem;
 
   width: 100%;
+
+  transition: all 0.2s ease;
 }
 
 .input-group {

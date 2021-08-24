@@ -7,10 +7,11 @@ import { Modal } from "./modal.js";
 import { createTransactionModel } from "./transactionModel.js";
 
 export interface ITransaction {
+  title: string;
   id: string | number;
   description: string;
   amount: number;
-  date: number;
+  created_at: number;
 }
 
 const modal = new Modal();

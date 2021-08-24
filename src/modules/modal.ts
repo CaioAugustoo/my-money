@@ -18,22 +18,22 @@ export class Modal {
 
   protected handleSubmit(_: Event): void {}
 
-  private open(event: Event) {
+  private open(event: Event): void {
     event.preventDefault();
     this._wrapper.classList.add(ACTIVE_CLASSNAME);
   }
 
-  public close() {
+  public close(): void {
     this._wrapper.classList.remove(ACTIVE_CLASSNAME);
   }
 
-  private events() {
+  private events(): void {
     this._openButton.addEventListener("click", event => this.open(event));
     this._cancelButton.addEventListener("click", this.close);
     this._form.addEventListener("submit", event => this.handleSubmit(event));
   }
 
-  private bindEvents() {
+  private bindEvents(): void {
     this.close = this.close.bind(this);
   }
 }

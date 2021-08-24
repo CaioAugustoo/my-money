@@ -4,10 +4,10 @@ import { ITransaction } from "./transactions.js";
 
 export function createTransactionModel(transaction: ITransaction): string {
   return `
-      <tr>
-        <td>${transaction.description}</td>
-        <td>${formatPrice(transaction.amount)}</td>
-        <td>${formatDate(transaction.date)}</td>
-      </tr>
-    `;
+    <tr>
+      <td>${transaction.description}</td>
+      <td>${formatPrice(transaction.amount)}</td>
+      <td>${formatDate(transaction.date)}</td>
+    </tr>
+  `;
 }

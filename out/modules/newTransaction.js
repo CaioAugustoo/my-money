@@ -1,6 +1,7 @@
+import { ACTIVE_CLASSNAME } from "../constants/index.js";
 import { Modal } from "./modal.js";
 import { Transactions } from "./transactions.js";
-const transaction = new Transactions();
+export const transaction = new Transactions();
 export class NewTransaction extends Modal {
     constructor() {
         super();
@@ -19,8 +20,8 @@ export class NewTransaction extends Modal {
     handleChangeType(event, index) {
         event.preventDefault();
         const selectedOption = event.currentTarget;
-        this._typeFields.forEach(field => field.classList.remove("active"));
-        this._typeFields[index].classList.add("active");
+        this._typeFields.forEach(field => field.classList.remove(ACTIVE_CLASSNAME));
+        this._typeFields[index].classList.add(ACTIVE_CLASSNAME);
         this._type = selectedOption.dataset.option;
     }
     handleSubmit(event) {

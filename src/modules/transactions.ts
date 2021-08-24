@@ -51,7 +51,7 @@ export class Transactions {
     this.transactions.forEach(transaction => this.addToDom(transaction));
   }
 
-  public list(): ITransaction[] {
+  private list(): ITransaction[] {
     const itensFromStorage = getItemFromStorage() || [];
 
     this.transactions = itensFromStorage;

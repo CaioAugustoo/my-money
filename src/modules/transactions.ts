@@ -37,7 +37,7 @@ export class Transactions {
   }
 
   private addToDom(transaction: ITransaction): void {
-    this._transactionsWrapper.insertAdjacentElement(
+    this._transactionsWrapper.insertAdjacentHTML(
       "afterbegin",
       createTransactionModel(transaction)
     );

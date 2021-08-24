@@ -16,7 +16,7 @@ export class Transactions {
         modal.close();
     }
     addToDom(transaction) {
-        this._transactionsWrapper.insertAdjacentElement("afterbegin", createTransactionModel(transaction));
+        this._transactionsWrapper.insertAdjacentHTML("afterbegin", createTransactionModel(transaction));
     }
     renderDom() {
         this.transactions.forEach(transaction => this.addToDom(transaction));

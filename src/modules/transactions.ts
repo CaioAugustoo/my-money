@@ -5,6 +5,7 @@ import {
 import { Modal } from "./modal.js";
 
 import { createTransactionModel } from "./transactionModel.js";
+import { TransactionSummary } from "./transactionsSummary.js";
 
 export interface ITransaction {
   title: string;
@@ -14,6 +15,9 @@ export interface ITransaction {
   created_at: number;
   type: string;
 }
+
+const modal = new Modal();
+const summary = new TransactionSummary();
 
 export class Transactions {
   private readonly _transactionsWrapper: HTMLDivElement;
@@ -27,13 +31,13 @@ export class Transactions {
   }
 
   public create(data: ITransaction): void {
-    const modal = new Modal();
-
     this.transactions.push(data);
     this.addToDom(data);
 
     saveItemInStorage(this.transactions);
+
     modal.close();
+    summary.showValues(this.transactions);
   }
 
   private addToDom(transaction: ITransaction): void {
@@ -47,11 +51,11 @@ export class Transactions {
     this.transactions.forEach(transaction => this.addToDom(transaction));
   }
 
-  private list(): ITransaction[] {
+  public list(): ITransaction[] {
     const itensFromStorage = getItemFromStorage() || [];
 
     this.transactions = itensFromStorage;
 
-    return itensFromStorage;
+    return this.transactions;
   }
 }

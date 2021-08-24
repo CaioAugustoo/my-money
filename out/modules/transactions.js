@@ -1,6 +1,9 @@
 import { getItemFromStorage, saveItemInStorage, } from "../utils/localStorage/index.js";
 import { Modal } from "./modal.js";
 import { createTransactionModel } from "./transactionModel.js";
+import { TransactionSummary } from "./transactionsSummary.js";
+const modal = new Modal();
+const summary = new TransactionSummary();
 export class Transactions {
     constructor() {
         this.transactions = [];
@@ -9,11 +12,11 @@ export class Transactions {
         this.renderDom();
     }
     create(data) {
-        const modal = new Modal();
         this.transactions.push(data);
         this.addToDom(data);
         saveItemInStorage(this.transactions);
         modal.close();
+        summary.showValues(this.transactions);
     }
     addToDom(transaction) {
         this._transactionsWrapper.insertAdjacentHTML("afterbegin", createTransactionModel(transaction));
@@ -24,7 +27,7 @@ export class Transactions {
     list() {
         const itensFromStorage = getItemFromStorage() || [];
         this.transactions = itensFromStorage;
-        return itensFromStorage;
+        return this.transactions;
     }
 }
 //# sourceMappingURL=transactions.js.map

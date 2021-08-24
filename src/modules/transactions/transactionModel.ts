@@ -1,5 +1,5 @@
-import { formatDate } from "../utils/formatters/date.js";
-import { formatPrice } from "../utils/formatters/price.js";
+import { formatDate } from "../../utils/formatters/date.js";
+import { formatPrice } from "../../utils/formatters/price.js";
 import { ITransaction } from "./transactions.js";
 
 export function createTransactionModel(transaction: ITransaction): string {

@@ -1,5 +1,5 @@
-import { formatDate } from "../utils/formatters/date.js";
-import { formatPrice } from "../utils/formatters/price.js";
+import { formatDate } from "../../utils/formatters/date.js";
+import { formatPrice } from "../../utils/formatters/price.js";
 export function createTransactionModel(transaction) {
     return `
     <tr data-id=${transaction.id}>

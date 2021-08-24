@@ -1,5 +1,5 @@
-import { NewTransaction, transaction } from "./newTransaction.js";
-import { TransactionSummary as Summary } from "./transactionsSummary.js";
+import { NewTransaction, transaction } from "./transactions/newTransaction.js";
+import { TransactionSummary as Summary } from "./transactions/transactionsSummary.js";
 new NewTransaction();
 new Summary().showValues(transaction.transactions);
 //# sourceMappingURL=app.js.map

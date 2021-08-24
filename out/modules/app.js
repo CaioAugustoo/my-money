@@ -1,3 +1,3 @@
-import { NewTransaction } from "./newTransaction.js";
-new NewTransaction();
+import { NewTransaction as Transactions } from "./newTransaction.js";
+new Transactions();
 //# sourceMappingURL=app.js.map

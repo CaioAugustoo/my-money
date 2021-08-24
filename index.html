@@ -68,6 +68,12 @@
     </main>
 
     <div class="modal-overlay">
+      <img
+        src="assets/icon-close.svg"
+        alt="An icon with X"
+        title="Close modal"
+        class="close"
+      />
       <div class="modal">
         <div id="form">
           <h2>Nova Transação</h2>
@@ -104,14 +110,14 @@
                 placeholder="Valor"
                 required
               />
-              <small class="help"
-                >Use o sinal - (negativo) para despesas e , (vírgula) para casas
-                decimais</small
-              >
+            </div>
+
+            <div class="input-group flex">
+              <a href="#" class="button income" data-option="income">Entrada</a>
+              <a href="#" class="button expense" data-option="expense">Saída</a>
             </div>
 
             <div class="input-group actions">
-              <a href="#" class="button cancel">Cancelar</a>
               <button>Salvar</button>
             </div>
           </form>

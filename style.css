@@ -251,9 +251,16 @@ td.expense {
   z-index: 1;
 }
 
+.close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
 /* Form ===================== */
 #form {
-  max-width: 500px;
+  width: 500px;
 }
 
 #form h2 {
@@ -286,9 +293,61 @@ input {
   align-items: center;
 }
 
-.input-group.actions .button,
+.input-group.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
 .input-group.actions button {
+  width: 100%;
+}
+
+.input-group .flex {
+  display: flex;
+}
+
+.expense,
+.income {
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+.expense:hover,
+.income:hover,
+.expense.active,
+.income.active {
+  opacity: 1;
+}
+
+.input-group .expense {
+  color: var(--red);
+  border: 1px var(--red) solid;
+
+  border-radius: 0.25rem;
+
+  height: 50px;
   width: 48%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group .income {
+  color: #12a454;
+  border: 1px #12a454 solid;
+
+  border-radius: 0.25rem;
+
+  height: 50px;
+  width: 48%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Footer ===================== */

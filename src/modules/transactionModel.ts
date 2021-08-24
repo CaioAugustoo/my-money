@@ -7,7 +7,9 @@ export function createTransactionModel(transaction: ITransaction): string {
     <tr>
       <td>${transaction.title}</td>
       <td>${transaction.description}</td>
-      <td>${formatPrice(transaction.amount)}</td>
+      <td style=${
+        transaction.type === "income" ? "color:green" : "color:red"
+      }>${formatPrice(transaction.amount)}</td>
       <td>${formatDate(transaction.created_at)}</td>
     </tr>
   `;

@@ -1,3 +1,3 @@
-import { NewTransaction } from "./newTransaction.js";
+import { NewTransaction as Transactions } from "./newTransaction.js";
 
-new NewTransaction();
+new Transactions();

@@ -4,13 +4,11 @@ import { outsideClick } from "./outsideClick.js";
 export class Modal {
   private readonly _wrapper: HTMLDivElement;
   private readonly _openButton: HTMLLinkElement;
-  private readonly _closeButton: HTMLImageElement;
   private readonly _form: HTMLFormElement;
 
   constructor() {
     this._wrapper = document.querySelector(".modal-overlay") as HTMLDivElement;
     this._openButton = document.querySelector(".new") as HTMLLinkElement;
-    this._closeButton = document.querySelector(".close") as HTMLImageElement;
     this._form = document.querySelector("#form") as HTMLFormElement;
 
     this.bindEvents();
@@ -41,7 +39,6 @@ export class Modal {
   protected events(): void {
     this._openButton.addEventListener("click", event => this.open(event));
     this._form.addEventListener("submit", event => this.handleSubmit(event));
-    this._closeButton.addEventListener("click", this.close);
 
     document.documentElement.addEventListener("click", event =>
       this.handleOutsideClick(event)

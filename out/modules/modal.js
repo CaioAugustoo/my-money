@@ -4,7 +4,6 @@ export class Modal {
     constructor() {
         this._wrapper = document.querySelector(".modal-overlay");
         this._openButton = document.querySelector(".new");
-        this._closeButton = document.querySelector(".close");
         this._form = document.querySelector("#form");
         this.bindEvents();
         this.events();
@@ -28,7 +27,6 @@ export class Modal {
     events() {
         this._openButton.addEventListener("click", event => this.open(event));
         this._form.addEventListener("submit", event => this.handleSubmit(event));
-        this._closeButton.addEventListener("click", this.close);
         document.documentElement.addEventListener("click", event => this.handleOutsideClick(event));
         window.addEventListener("keyup", this.handleKeyUp);
     }

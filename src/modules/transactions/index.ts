@@ -9,7 +9,6 @@ import { TransactionSummary } from "./summary.js";
 
 export interface ITransaction {
   title: string;
-  id: string | number;
   description: string;
   amount: number;
   created_at: number;

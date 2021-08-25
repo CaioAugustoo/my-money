@@ -4,7 +4,13 @@
   "repository": "https://github.com/CaioAugustoo/my-money.git",
   "author": "caioaugustoo <caioamfr@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "sass": "node-sass -w src/styles/ -o out/"
+  },
   "devDependencies": {
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "sass": "^1.38.1"
   }
 }

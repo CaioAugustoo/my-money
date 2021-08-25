@@ -1,0 +1,86 @@
+@import "variables";
+
+#form {
+  width: 500px;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+input {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+
+  transition: all 0.2s ease;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+
+  &.help {
+    opacity: 0.4;
+  }
+
+  &.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .expense {
+    color: $red;
+    border: 1px $red solid;
+
+    border-radius: 0.25rem;
+
+    height: 50px;
+    width: 48%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .income {
+    color: $income;
+    border: 1px $income solid;
+
+    border-radius: 0.25rem;
+
+    height: 50px;
+    width: 48%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.expense,
+.income {
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &.active {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,13 @@
+@import "variables";
+
+@media (min-width: $media-medium) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}

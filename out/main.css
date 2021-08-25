@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #f0f2f5; }
+  body.body-locked {
+    overflow-y: hidden; }
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif; }
+
+input:focus {
+  border: 1px solid #9a75ff; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0; }
+
+.container {
+  width: calc(min(90vw, 800px));
+  margin: auto; }
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%; }
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; } }
+
+#form {
+  width: 500px; }
+  #form h2 {
+    margin-top: 0; }
+
+input {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+  transition: all 0.2s ease; }
+
+.input-group {
+  margin-top: 0.8rem; }
+  .input-group.help {
+    opacity: 0.4; }
+  .input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .input-group.actions button {
+      width: 100%; }
+  .input-group.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem 0; }
+  .input-group .expense {
+    color: #e92929;
+    border: 1px #e92929 solid;
+    border-radius: 0.25rem;
+    height: 50px;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .input-group .income {
+    color: #12a454;
+    border: 1px #12a454 solid;
+    border-radius: 0.25rem;
+    height: 50px;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+.expense,
+.income {
+  opacity: 0.4;
+  transition: opacity 0.2s ease; }
+  .expense:hover, .expense.active,
+  .income:hover,
+  .income.active {
+    opacity: 1; }
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1; }
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: all 0.1s ease; }
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible; }
+
+.close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  cursor: pointer; }
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: #363f5f;
+  font-weight: normal; }
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: #363f5f;
+  opacity: 0.6; }
+
+header {
+  background: #6739ac;
+  padding: 2rem 0 10rem;
+  text-align: center;
+  color: #fff; }
+
+.card {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: #363f5f; }
+  .card h3 {
+    font-weight: normal;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .card p {
+    font-size: 2rem;
+    line-height: 3rem;
+    white-space: nowrap;
+    margin-top: 1rem; }
+  .card.total {
+    background: #9a75ff;
+    color: #fff; }
+
+#balance {
+  margin-top: -8rem;
+  color: #fff; }
+
+a {
+  color: #6739ac;
+  text-decoration: none; }
+  a:hover {
+    color: #9a75ff; }
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: white;
+  background: #6739ac;
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease; }
+  button:hover {
+    background: #9a75ff; }
+  button.new {
+    display: inline-block;
+    margin-bottom: 0.8rem; }
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto; }
+
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: #969cb3; }
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem; }
+
+table thead th {
+  background: #fff;
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left; }
+
+table tbody tr {
+  opacity: 0.7;
+  transition: all 0.2s; }
+  table tbody tr:hover {
+    opacity: 1; }
+
+table tbody td {
+  background: #fff;
+  padding: 1rem 2rem; }
+
+td.description {
+  color: #363f5f; }
+
+td.income {
+  color: #12a454; }
+
+td.expense {
+  color: #e92929; }

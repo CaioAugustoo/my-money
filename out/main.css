@@ -42,10 +42,8 @@ input:focus {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem; } }
 
-#form {
-  width: 500px; }
-  #form h2 {
-    margin-top: 0; }
+#form h2 {
+  margin-top: 0; }
 
 input {
   outline: none;
@@ -103,7 +101,9 @@ input {
   background: #f0f2f5;
   padding: 2.4rem;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  width: 35rem;
+  margin: 0 2rem; }
 
 .modal-overlay {
   width: 100%;

@@ -1,0 +1,1 @@
+{"version":3,"file":"outsideClick.js","sourceRoot":"","sources":["../../src/modules/outsideClick.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,uBAAuB,CAAC;AAEzD,MAAM,UAAU,YAAY,CAC1B,KAAY,EACZ,OAAoB,EACpB,QAA0B;IAE1B,IAAI,KAAK,CAAC,MAAM,KAAK,OAAO,EAAE;QAC5B,OAAO,CAAC,SAAS,CAAC,MAAM,CAAC,gBAAgB,CAAC,CAAC;QAC3C,QAAQ,EAAE,CAAC;KACZ;AACH,CAAC"}

@@ -30,6 +30,7 @@ export class Transactions {
     }
     renderDom() {
         this.transactions.forEach(transaction => this.addToDom(transaction));
+        return this.transactions;
     }
     list() {
         const itensFromStorage = getItemFromStorage() || [];

@@ -30,7 +30,6 @@ export class Transactions {
 
     this.list();
     this.renderDom();
-
     this.bindEvents();
     this.events();
   }
@@ -56,8 +55,10 @@ export class Transactions {
     );
   }
 
-  private renderDom(): void {
+  public renderDom(): ITransaction[] {
     this.transactions.forEach(transaction => this.addToDom(transaction));
+
+    return this.transactions;
   }
 
   private list(): ITransaction[] {

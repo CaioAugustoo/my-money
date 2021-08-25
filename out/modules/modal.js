@@ -1,4 +1,5 @@
 import { ACTIVE_CLASSNAME } from "../constants/index.js";
+import { outsideClick } from "./outsideClick.js";
 export class Modal {
     constructor() {
         this._wrapper = document.querySelector(".modal-overlay");
@@ -9,6 +10,9 @@ export class Modal {
         this.events();
     }
     handleSubmit(_) { }
+    handleOutsideClick(event) {
+        outsideClick(event, this._wrapper, this.close);
+    }
     open(event) {
         event.preventDefault();
         this._wrapper.classList.add(ACTIVE_CLASSNAME);
@@ -25,6 +29,7 @@ export class Modal {
         this._openButton.addEventListener("click", event => this.open(event));
         this._form.addEventListener("submit", event => this.handleSubmit(event));
         this._closeButton.addEventListener("click", this.close);
+        document.documentElement.addEventListener("click", event => this.handleOutsideClick(event));
         window.addEventListener("keyup", this.handleKeyUp);
     }
     bindEvents() {

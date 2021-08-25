@@ -1,4 +1,5 @@
 import { ACTIVE_CLASSNAME } from "../constants/index.js";
+import { outsideClick } from "./outsideClick.js";
 
 export class Modal {
   private readonly _wrapper: HTMLDivElement;
@@ -17,6 +18,10 @@ export class Modal {
   }
 
   protected handleSubmit(_: Event): void {}
+
+  private handleOutsideClick(event: MouseEvent): void {
+    outsideClick(event, this._wrapper, this.close);
+  }
 
   private open(event: Event): void {
     event.preventDefault();
@@ -38,6 +43,9 @@ export class Modal {
     this._form.addEventListener("submit", event => this.handleSubmit(event));
     this._closeButton.addEventListener("click", this.close);
 
+    document.documentElement.addEventListener("click", event =>
+      this.handleOutsideClick(event)
+    );
     window.addEventListener("keyup", this.handleKeyUp);
   }
 

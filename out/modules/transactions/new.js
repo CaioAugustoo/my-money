@@ -11,6 +11,8 @@ export class NewTransaction extends Modal {
         this._amountField = document.querySelector("#amount");
         this._typeFields = document.querySelectorAll(".input-group [data-option]");
         this.typeEvent();
+        super.bindEvents();
+        super.events();
     }
     clearFields() {
         this._titleField.value = "";
@@ -33,6 +35,7 @@ export class NewTransaction extends Modal {
             created_at: new Date().getTime(),
             type: this._type,
         });
+        this.close();
         this.clearFields();
     }
     typeEvent() {

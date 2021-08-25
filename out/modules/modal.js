@@ -1,12 +1,10 @@
-import { ACTIVE_CLASSNAME } from "../constants/index.js";
+import { ACTIVE_CLASSNAME, BODY_LOCKED_CLASSNAME } from "../constants/index.js";
 import { outsideClick } from "./outsideClick.js";
 export class Modal {
     constructor() {
         this._wrapper = document.querySelector(".modal-overlay");
         this._openButton = document.querySelector(".new");
         this._form = document.querySelector("#form");
-        this.bindEvents();
-        this.events();
     }
     handleSubmit(_) { }
     handleOutsideClick(event) {
@@ -15,6 +13,8 @@ export class Modal {
     open(event) {
         event.preventDefault();
         this._wrapper.classList.add(ACTIVE_CLASSNAME);
+        document.body.classList.add(BODY_LOCKED_CLASSNAME);
+        window.addEventListener("keyup", this.handleKeyUp);
     }
     handleKeyUp(event) {
         if (event.key === "Escape") {
@@ -23,12 +23,13 @@ export class Modal {
     }
     close() {
         this._wrapper.classList.remove(ACTIVE_CLASSNAME);
+        document.body.classList.remove(BODY_LOCKED_CLASSNAME);
+        window.removeEventListener("keyup", this.handleKeyUp);
     }
     events() {
         this._openButton.addEventListener("click", event => this.open(event));
         this._form.addEventListener("submit", event => this.handleSubmit(event));
-        document.documentElement.addEventListener("click", event => this.handleOutsideClick(event));
-        window.addEventListener("keyup", this.handleKeyUp);
+        window.addEventListener("click", event => this.handleOutsideClick(event));
     }
     bindEvents() {
         this.close = this.close.bind(this);

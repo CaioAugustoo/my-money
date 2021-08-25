@@ -21,6 +21,9 @@ export class NewTransaction extends Modal {
     this._typeFields = document.querySelectorAll(".input-group [data-option]");
 
     this.typeEvent();
+
+    super.bindEvents();
+    super.events();
   }
 
   private clearFields(): void {
@@ -49,6 +52,7 @@ export class NewTransaction extends Modal {
       type: this._type,
     });
 
+    this.close();
     this.clearFields();
   }
 

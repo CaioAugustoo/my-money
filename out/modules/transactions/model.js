@@ -10,4 +10,4 @@ export function createTransactionModel(transaction) {
     </tr>
   `;
 }
-//# sourceMappingURL=transactionModel.js.map
+//# sourceMappingURL=model.js.map

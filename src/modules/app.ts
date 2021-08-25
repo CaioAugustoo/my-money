@@ -1,5 +1,5 @@
-import { NewTransaction, transaction } from "./transactions/newTransaction.js";
-import { TransactionSummary as Summary } from "./transactions/transactionsSummary.js";
+import { NewTransaction, transaction } from "../modules/transactions/new.js";
+import { TransactionSummary } from "../modules/transactions/summary.js";
 
 new NewTransaction();
-new Summary().showValues(transaction.transactions);
+new TransactionSummary().showValues(transaction.transactions);

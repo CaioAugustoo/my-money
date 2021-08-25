@@ -1,7 +1,7 @@
 import { getItemFromStorage, saveItemInStorage, } from "../../utils/localStorage/index.js";
-import { Modal } from "./../modal.js";
-import { createTransactionModel } from "./transactionModel.js";
-import { TransactionSummary } from "./transactionsSummary.js";
+import { Modal } from "../modal.js";
+import { createTransactionModel } from "./model.js";
+import { TransactionSummary } from "./summary.js";
 const modal = new Modal();
 const summary = new TransactionSummary();
 export class Transactions {
@@ -31,4 +31,4 @@ export class Transactions {
         return this.transactions;
     }
 }
-//# sourceMappingURL=transactions.js.map
+//# sourceMappingURL=index.js.map

@@ -1,6 +1,6 @@
 import { ACTIVE_CLASSNAME } from "../../constants/index.js";
-import { Modal } from "./../modal.js";
-import { Transactions } from "./transactions.js";
+import { Modal } from "../modal.js";
+import { Transactions } from "./index.js";
 export const transaction = new Transactions();
 export class NewTransaction extends Modal {
     constructor() {
@@ -40,4 +40,4 @@ export class NewTransaction extends Modal {
         this._typeFields.forEach((field, index) => field.addEventListener("click", event => this.handleChangeType(event, index)));
     }
 }
-//# sourceMappingURL=newTransaction.js.map
+//# sourceMappingURL=new.js.map

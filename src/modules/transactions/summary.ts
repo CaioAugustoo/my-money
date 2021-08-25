@@ -1,5 +1,5 @@
 import { formatPrice } from "../../utils/formatters/price.js";
-import { ITransaction } from "./transactions.js";
+import { ITransaction } from "./index.js";
 
 interface IListAll {
   income: number;

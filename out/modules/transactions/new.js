@@ -28,7 +28,6 @@ export class NewTransaction extends Modal {
         event.preventDefault();
         transaction.create({
             title: this._titleField.value,
-            id: new Date().getTime(),
             description: this._descriptionField.value,
             amount: Number(this._amountField.value),
             created_at: new Date().getTime(),

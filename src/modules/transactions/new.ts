@@ -22,8 +22,8 @@ export class NewTransaction extends Modal {
 
     this.typeEvent();
 
-    super.bindEvents();
-    super.events();
+    this.bindEvents();
+    this.events();
   }
 
   private clearFields(): void {

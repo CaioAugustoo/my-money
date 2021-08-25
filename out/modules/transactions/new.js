@@ -11,8 +11,8 @@ export class NewTransaction extends Modal {
         this._amountField = document.querySelector("#amount");
         this._typeFields = document.querySelectorAll(".input-group [data-option]");
         this.typeEvent();
-        super.bindEvents();
-        super.events();
+        this.bindEvents();
+        this.events();
     }
     clearFields() {
         this._titleField.value = "";

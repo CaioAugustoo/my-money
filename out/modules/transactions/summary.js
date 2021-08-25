@@ -21,4 +21,4 @@ export class TransactionSummary {
         return allTransactions;
     }
 }
-//# sourceMappingURL=transactionsSummary.js.map
+//# sourceMappingURL=summary.js.map

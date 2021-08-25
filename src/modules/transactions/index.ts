@@ -2,10 +2,10 @@ import {
   getItemFromStorage,
   saveItemInStorage,
 } from "../../utils/localStorage/index.js";
-import { Modal } from "./../modal.js";
+import { Modal } from "../modal.js";
 
-import { createTransactionModel } from "./transactionModel.js";
-import { TransactionSummary } from "./transactionsSummary.js";
+import { createTransactionModel } from "./model.js";
+import { TransactionSummary } from "./summary.js";
 
 export interface ITransaction {
   title: string;

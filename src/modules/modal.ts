@@ -1,4 +1,4 @@
-import { ACTIVE_CLASSNAME } from "../constants/index.js";
+import { ACTIVE_CLASSNAME, BODY_LOCKED_CLASSNAME } from "../constants/index.js";
 import { outsideClick } from "./outsideClick.js";
 
 export class Modal {
@@ -10,9 +10,6 @@ export class Modal {
     this._wrapper = document.querySelector(".modal-overlay") as HTMLDivElement;
     this._openButton = document.querySelector(".new") as HTMLLinkElement;
     this._form = document.querySelector("#form") as HTMLFormElement;
-
-    this.bindEvents();
-    this.events();
   }
 
   protected handleSubmit(_: Event): void {}
@@ -23,7 +20,11 @@ export class Modal {
 
   private open(event: Event): void {
     event.preventDefault();
+
     this._wrapper.classList.add(ACTIVE_CLASSNAME);
+    document.body.classList.add(BODY_LOCKED_CLASSNAME);
+
+    window.addEventListener("keyup", this.handleKeyUp);
   }
 
   private handleKeyUp(event: KeyboardEvent) {
@@ -34,16 +35,16 @@ export class Modal {
 
   public close(): void {
     this._wrapper.classList.remove(ACTIVE_CLASSNAME);
+    document.body.classList.remove(BODY_LOCKED_CLASSNAME);
+
+    window.removeEventListener("keyup", this.handleKeyUp);
   }
 
   protected events(): void {
     this._openButton.addEventListener("click", event => this.open(event));
     this._form.addEventListener("submit", event => this.handleSubmit(event));
 
-    document.documentElement.addEventListener("click", event =>
-      this.handleOutsideClick(event)
-    );
-    window.addEventListener("keyup", this.handleKeyUp);
+    window.addEventListener("click", event => this.handleOutsideClick(event));
   }
 
   protected bindEvents(): void {

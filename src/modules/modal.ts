@@ -38,7 +38,6 @@ export class Modal {
     this._wrapper.classList.remove(ACTIVE_CLASSNAME);
     document.body.classList.remove(BODY_LOCKED_CLASSNAME);
 
-    window.addEventListener("click", this.handleOutsideClick);
     window.removeEventListener("keyup", this.handleKeyUp);
     window.removeEventListener("click", this.handleOutsideClick);
   }

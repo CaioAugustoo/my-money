@@ -1,5 +1,5 @@
 import { STORAGE_KEY } from "../../constants/index.js";
-import { ITransaction } from "../../modules/transactions/transactions.js";
+import { ITransaction } from "../../modules/transactions/index.js";
 
 export function saveItemInStorage(value: ITransaction[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(value));

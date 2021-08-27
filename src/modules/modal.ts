@@ -25,6 +25,7 @@ export class Modal {
     document.body.classList.add(BODY_LOCKED_CLASSNAME);
 
     window.addEventListener("keyup", this.handleKeyUp);
+    window.addEventListener("click", this.handleOutsideClick);
   }
 
   private handleKeyUp(event: KeyboardEvent) {
@@ -38,17 +39,17 @@ export class Modal {
     document.body.classList.remove(BODY_LOCKED_CLASSNAME);
 
     window.removeEventListener("keyup", this.handleKeyUp);
+    window.removeEventListener("click", this.handleOutsideClick);
   }
 
   protected events(): void {
     this._openButton.addEventListener("click", event => this.open(event));
     this._form.addEventListener("submit", event => this.handleSubmit(event));
-
-    window.addEventListener("click", event => this.handleOutsideClick(event));
   }
 
   protected bindEvents(): void {
     this.close = this.close.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 }

@@ -15,6 +15,7 @@ export class Modal {
         this._wrapper.classList.add(ACTIVE_CLASSNAME);
         document.body.classList.add(BODY_LOCKED_CLASSNAME);
         window.addEventListener("keyup", this.handleKeyUp);
+        window.addEventListener("click", this.handleOutsideClick);
     }
     handleKeyUp(event) {
         if (event.key === "Escape") {
@@ -25,15 +26,16 @@ export class Modal {
         this._wrapper.classList.remove(ACTIVE_CLASSNAME);
         document.body.classList.remove(BODY_LOCKED_CLASSNAME);
         window.removeEventListener("keyup", this.handleKeyUp);
+        window.removeEventListener("click", this.handleOutsideClick);
     }
     events() {
         this._openButton.addEventListener("click", event => this.open(event));
         this._form.addEventListener("submit", event => this.handleSubmit(event));
-        window.addEventListener("click", event => this.handleOutsideClick(event));
     }
     bindEvents() {
         this.close = this.close.bind(this);
         this.handleKeyUp = this.handleKeyUp.bind(this);
+        this.handleOutsideClick = this.handleOutsideClick.bind(this);
     }
 }
 //# sourceMappingURL=modal.js.map

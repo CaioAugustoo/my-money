@@ -13,7 +13,7 @@ Você pode conferir o resultado final em: https://my-moneyy.netlify.app/
 
 ## 🎯 Objetivo do projeto
 Este projeto foi desenvolvido durante o treinamento "Discover" da Rocketseat. O Projeto no treinamento é desenvolvido com JavaScript Vanilla e CSS.
-Eu me desafiei em desenvolver TypeScript, SCSS, Webpack e Babel.
+Eu me desafiei em desenvolver com TypeScript, SCSS, Webpack e Babel.
 
 ## 📝 Tecnologias 
 Para a realização desse projeto foram utilizadas as seguintes tecnologias/linguagens: 

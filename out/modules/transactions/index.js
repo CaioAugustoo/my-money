@@ -22,7 +22,9 @@ export class Transactions {
         this._transactionsWrapper.insertAdjacentHTML("afterbegin", createTransactionModel(transaction));
     }
     renderDom() {
-        this.transactions.forEach(transaction => this.addToDom(transaction));
+        this.transactions
+            .sort((a, b) => new Date(a.created_at) > new Date(b.created_at) ? 1 : -1)
+            .forEach(transaction => this.addToDom(transaction));
         return this.transactions;
     }
     list() {
